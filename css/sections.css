@@ -1,0 +1,47 @@
+/* 🎯 Notepad area */
+#notepad {
+    min-height: 60vh;
+    padding: 1rem;
+    border: 2px dashed #ccc;
+    background-color: #fdfdfd;
+    color: #222;
+    font-family: "Georgia", serif;
+    line-height: 1.6;
+    overflow-y: auto;
+    resize: vertical;
+    outline: none;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+  
+  /* 🧰 Controls for the Notepad */
+  #notepadControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* General control layout (shared class if needed) */
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* Hidden toggle class */
+  .hidden {
+    display: none;
+  }
+  
+  /* Import label styling */
+  .import-label {
+    position: relative;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    background: #ddd;
+    border-radius: 4px;
+  }
+  .import-label input[type="file"] {
+    display: none;
+  }

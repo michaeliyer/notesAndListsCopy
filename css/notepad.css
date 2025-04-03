@@ -1,0 +1,133 @@
+#notepad {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-y: auto;
+  resize: both;
+  z-index: 1000;
+}
+
+#notepad:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+#notepadControls {
+  position: fixed;
+  top: 20px;
+  right: 340px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#notepadControls button,
+#notepadControls .import-label {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+#notepadControls button:hover,
+#notepadControls .import-label:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+#notepadControls .hidden {
+  display: none;
+}
+
+/* Notepad Style Modal */
+#notepadStyleModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+#notepadStyleModal .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+#notepadStyleModal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+#notepadStyleModal select,
+#notepadStyleModal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#notepadStyleModal button {
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+#notepadStyleModal button:hover {
+  background-color: #0056b3;
+}
+
+#notepadStyleModal.hidden {
+  display: none;
+}
+
+/* Floating toggle button */
+.floating-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1001;
+  transition: all 0.2s ease;
+}
+
+.floating-toggle:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
