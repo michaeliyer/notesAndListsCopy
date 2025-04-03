@@ -70,9 +70,17 @@ function initNotepad() {
 function clearNotepad() {
   const notepad = document.getElementById("notepad");
   if (!notepad) return;
-  notepad.textContent = "";
-  notepadContent = "";
-  localStorage.setItem(NOTEPAD_KEY, "");
+
+  // Show confirmation dialog
+  if (
+    confirm(
+      "⚠️ Are you sure you want to clear the notepad? This action cannot be undone."
+    )
+  ) {
+    notepad.textContent = "";
+    notepadContent = "";
+    localStorage.setItem(NOTEPAD_KEY, "");
+  }
 }
 
 // 📤 Download current content as .txt

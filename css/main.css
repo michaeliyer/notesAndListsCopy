@@ -1,5 +1,8 @@
 body {
   background-color: blue;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 .hidden {
@@ -9,15 +12,17 @@ body {
 /* Controls positioning */
 #notepadControls {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   z-index: 1000;
 }
 
 #listControls {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   z-index: 1000;
   display: none; /* Hide by default */
 }
@@ -59,12 +64,12 @@ body {
 
 #toggleNotepadControlsBtn {
   top: 20px;
-  right: 20px;
+  left: 20px;
 }
 
 #toggleListControlsBtn {
   top: 20px;
-  left: 20px;
+  right: 20px;
 }
 
 .floating-toggle:hover {
