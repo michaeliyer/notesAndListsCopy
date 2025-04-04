@@ -87,7 +87,7 @@ function renderSections() {
       fontSize: sectionData.fontSize ? `${sectionData.fontSize}px` : "16px",
       color: sectionData.color || "#000000",
       backgroundColor: sectionData.backgroundColor || "#ffffff",
-      display: "none",
+      display: "block",
     });
 
     // 🏷 Title
@@ -199,7 +199,3 @@ function renderSections() {
 
 // 🔁 Export if needed
 export { renderSections, sections };
-
-
-
-

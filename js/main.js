@@ -2,6 +2,7 @@
 import { initNotepad } from "./notepad.js";
 import { initNotepadStyles } from "./notepadStyle.js";
 import { initSections } from "./sections.js";
+import { initListControls } from "./listControls.js";
 import "./sectionStyle.js";
 import "./modals.js";
 import "./storage.js";
@@ -23,63 +24,54 @@ window.addEventListener("error", function (event) {
 
 // Initialize the application when the DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Initializing application...");
+  console.log("🚀 Initializing application...");
 
-  // Initialize all components
-  initNotepad();
-  initNotepadStyles();
-  initSections();
-  initModals();
+  try {
+    // Initialize all components
+    console.log("Initializing components...");
+    initNotepad();
+    initNotepadStyles();
+    initSections();
+    initModals();
 
-  // Set up toggle buttons
-  const toggleNotepadBtn = document.getElementById("toggleNotepadControlsBtn");
-  const toggleListControlsBtn = document.getElementById(
-    "toggleListControlsBtn"
-  );
-  const notepadControls = document.getElementById("notepadControls");
-  const listControls = document.getElementById("listControls");
+    // Initialize list controls last to ensure other components are ready
+    console.log("Initializing list controls...");
+    initListControls();
 
-  const toggleListBtn = document.getElementById("toggleListBtn");
-  const sectionsContainer = document.getElementById("sectionsContainer");
+    // Set up notepad toggle buttons
+    const toggleNotepadBtn = document.getElementById("toggleNotepadBtn");
+    const toggleNotepadControlsBtn = document.getElementById(
+      "toggleNotepadControlsBtn"
+    );
+    const notepadControls = document.getElementById("notepadControls");
+    const notepad = document.getElementById("notepad");
 
-  // 📝 Toggle Notepad Controls
-  if (toggleNotepadBtn && notepadControls) {
-    toggleNotepadBtn.addEventListener("click", () => {
-      notepadControls.classList.toggle("hidden");
-      const isHidden = notepadControls.classList.contains("hidden");
-      toggleNotepadBtn.textContent = isHidden
-        ? "🧰 Show Notepad Controls"
-        : "🧹 Hide Notepad Controls";
-    });
-  }
+    console.log("Setting up notepad toggles...");
 
-  // 🗂 Toggle List Controls
-  if (toggleListBtn && listControls) {
-    toggleListBtn.addEventListener("click", () => {
-      listControls.classList.toggle("hidden");
-      const isHidden = listControls.classList.contains("hidden");
-      toggleListBtn.textContent = isHidden
-        ? "🧺 Show List Controls"
-        : "📦 Hide List Controls";
-    });
-  }
+    // 📝 Toggle Notepad
+    if (toggleNotepadBtn && notepad) {
+      toggleNotepadBtn.addEventListener("click", () => {
+        notepad.classList.toggle("hidden");
+        const isHidden = notepad.classList.contains("hidden");
+        toggleNotepadBtn.textContent = isHidden
+          ? "📝 Show Notepad"
+          : "📝 Hide Notepad";
+      });
+    }
 
-  console.log("Application initialized successfully!");
-});
+    // 🧰 Toggle Notepad Controls
+    if (toggleNotepadControlsBtn && notepadControls) {
+      toggleNotepadControlsBtn.addEventListener("click", () => {
+        notepadControls.classList.toggle("hidden");
+        const isHidden = notepadControls.classList.contains("hidden");
+        toggleNotepadControlsBtn.textContent = isHidden
+          ? "🧰 Show Notepad Controls"
+          : "🧹 Hide Notepad Controls";
+      });
+    }
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleListBtn = document.getElementById("toggleListBtn");
-  const sectionsContainer = document.getElementById("sectionsContainer");
-
-  if (toggleListBtn && sectionsContainer) {
-    console.log("🔁 Toggling list display");
-    toggleListBtn.addEventListener("click", () => {
-      sectionsContainer.classList.toggle("hidden");
-      const isHidden = sectionsContainer.classList.contains("hidden");
-      toggleListBtn.textContent = isHidden ? "🗂 Show List" : "📋 Hide List";
-    });
-  } else {
-    console.warn("⚠️ Missing toggleListBtn or sectionsContainer in DOM");
+    console.log("✨ Application initialized successfully!");
+  } catch (error) {
+    console.error("❌ Error during initialization:", error);
   }
 });
