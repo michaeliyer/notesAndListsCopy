@@ -2,10 +2,12 @@
 
 console.log("✅ storage.js loaded");
 
+// Import sections from sections.js
+import { sections } from "./sections.js";
+
 // Save sections to localStorage
 export function saveSections() {
-  const sections =
-    JSON.parse(localStorage.getItem("allSectionsLocalCopy")) || {};
+  console.log("Saving sections:", sections);
   localStorage.setItem("allSectionsLocalCopy", JSON.stringify(sections));
 }
 

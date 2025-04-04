@@ -57,14 +57,16 @@ const initializeControls = () => {
     toggleListControlsBtn.addEventListener("click", handleListControlsToggle);
   }
 
-  // Show elements by default
+  // Show sections container but keep listControls hidden
   if (sectionsContainer) {
     console.log("Showing sections container");
     sectionsContainer.classList.remove("hidden");
   }
+
+  // Ensure list controls are hidden by default
   if (listControls) {
-    console.log("Showing list controls");
-    listControls.classList.remove("hidden");
+    console.log("Ensuring list controls are hidden by default");
+    listControls.classList.add("hidden");
   }
 };
 

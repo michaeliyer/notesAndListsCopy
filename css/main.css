@@ -21,6 +21,31 @@ body {
   display: none !important;
 }
 
+/* Main layout */
+#notepad {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 800px;
+  z-index: 1;
+}
+
+#sectionsContainer {
+  position: fixed;
+  top: 10rem; /* Below the buttons */
+  right: 20px;
+  width: 300px;
+  max-height: calc(100vh - 120px); /* Account for buttons and padding */
+  overflow-y: auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
 /* Controls positioning */
 #notepadControls {
   position: fixed;

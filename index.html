@@ -100,5 +100,37 @@
     <script type="module" src="js/sectionStyle.js"></script>
     <script type="module" src="js/modals.js"></script>
     <script type="module" src="js/storage.js"></script>
+
+    <!-- Direct toggle script for notepad -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Direct access to toggle button and notepad
+        const toggleBtn = document.getElementById("toggleNotepadBtn");
+        const notepad = document.getElementById("notepad");
+
+        if (toggleBtn && notepad) {
+          console.log("Direct toggle script loaded");
+
+          // Initially hide notepad
+          notepad.classList.add("hidden");
+          toggleBtn.textContent = "📝 Show Notepad";
+
+          // Set up direct toggle listener
+          toggleBtn.addEventListener("click", function () {
+            console.log("Direct toggle clicked");
+
+            if (notepad.classList.contains("hidden")) {
+              notepad.classList.remove("hidden");
+              toggleBtn.textContent = "📝 Hide Notepad";
+              console.log("Notepad shown");
+            } else {
+              notepad.classList.add("hidden");
+              toggleBtn.textContent = "📝 Show Notepad";
+              console.log("Notepad hidden");
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

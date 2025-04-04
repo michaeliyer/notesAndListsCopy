@@ -25,12 +25,14 @@ const SECTIONS_KEY = "allSectionsLocalCopy";
 
 // 📦 Sections Data
 let sections = JSON.parse(localStorage.getItem(SECTIONS_KEY)) || {};
+console.log("Loaded sections from localStorage:", sections);
 
 // 🎯 Selected Section
 let selectedSection = null;
 
 // 🔁 DOM reference
 const container = document.getElementById("sectionsContainer");
+console.log("Sections container:", container);
 
 // ✅ Initialize Sections (called from main.js)
 export function initSections() {
@@ -68,11 +70,29 @@ export function initSections() {
   renderSections();
 }
 
+// ➕ Add new section
+function addNewSection(sectionName) {
+  console.log("Adding new section:", sectionName);
+  sections[sectionName] = {
+    tasks: [],
+    hidden: false,
+  };
+  saveSections();
+  renderSections();
+}
+
 // 🧱 Render all sections
 function renderSections() {
+  console.log("Rendering sections:", sections);
+  if (!container) {
+    console.error("Sections container not found!");
+    return;
+  }
+
   container.innerHTML = "";
 
   Object.keys(sections).forEach((sectionName) => {
+    console.log("Rendering section:", sectionName);
     const sectionData = sections[sectionName];
     const sectionId = `section-${sectionName.replace(/\s+/g, "")}`;
 

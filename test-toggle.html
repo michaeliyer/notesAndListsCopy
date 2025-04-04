@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notepad Toggle Test</title>
+    <style>
+      .hidden {
+        display: none !important;
+      }
+
+      #notepad {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: white;
+      }
+
+      button {
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleBtn">Show Notepad</button>
+
+    <div id="notepad" class="hidden">This is the notepad content</div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggleBtn");
+        const notepad = document.getElementById("notepad");
+
+        // Hide notepad initially
+        notepad.classList.add("hidden");
+        toggleBtn.textContent = "Show Notepad";
+
+        toggleBtn.addEventListener("click", function () {
+          console.log("Button clicked");
+          console.log(
+            "Before toggle - hidden:",
+            notepad.classList.contains("hidden")
+          );
+
+          if (notepad.classList.contains("hidden")) {
+            notepad.classList.remove("hidden");
+            toggleBtn.textContent = "Hide Notepad";
+          } else {
+            notepad.classList.add("hidden");
+            toggleBtn.textContent = "Show Notepad";
+          }
+
+          console.log(
+            "After toggle - hidden:",
+            notepad.classList.contains("hidden")
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
