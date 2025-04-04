@@ -1,0 +1,56 @@
+.buttonWrapper {
+position: relative;
+}
+
+
+
+  /* 🔵 Notepad Buttons (Right side) */
+.notepadControl {
+    position: absolute;
+    top: 13rem;
+    right: 2rem;
+    background-color: rgb(32, 32, 228);
+    color: rgb(196, 190, 190);
+    width: 16rem;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+  
+  .notepadHider {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+    background-color: rgb(32, 32, 228);
+    color: rgb(196, 190, 190);
+    width: 16rem;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+  
+  /* 🟣 List Buttons (Left side) */
+  .listControl {
+    position: absolute;
+    top: 2rem;
+    left: 80rem;
+    background-color: rgb(255, 0, 255);
+    color: rgb(26, 9, 9);
+    width: 16rem;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+  
+  .listHider {
+    position: absolute;
+    top: 5rem;
+    left: 80rem;
+    background-color: rgb(255, 0, 255);
+    color: rgb(26, 9, 9);
+    width: 16rem;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+  
+  /* Common Hidden Utility */
+  .hidden {
+    display: none !important;
+  }

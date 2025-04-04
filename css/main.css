@@ -1,5 +1,17 @@
+/* body {
+  background-color: rgb(14, 52, 106);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+} */
+
 body {
-  background-color: blue;
+  background-image: url("../assets/Stock2.jpeg"); /* adjust path as needed */
+  background-size: cover; /* or 'contain' */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; /* makes it stay on scroll */
+  color: #ffffff; /* optional: white text for contrast */
   margin: 0;
   padding: 0;
   min-height: 100vh;

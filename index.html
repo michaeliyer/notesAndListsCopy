@@ -67,15 +67,22 @@
     </div>
 
     <!-- Toggle Buttons (always visible) -->
-    <button id="toggleNotepadControlsBtn" class="floating-toggle">
-      🧰 Show Notepad Controls
-    </button>
-    <button id="toggleListControlsBtn" class="floating-toggle hidden">
-      🧺 Show List Controls
-    </button>
-
+    <div class="buttonWrapper">
+        <button id="toggleNotepadBtn" class="floating-toggle notepadHider">
+          📝 Show Notepad
+        </button>
+        <button id="toggleListBtn" class="floating-toggle listHider">
+          🗂 Show List
+        </button>
+        <button id="toggleNotepadControlsBtn" class="floating-toggle notepadControl">
+        🧰 Show Notepad Controls
+        </button>
+        <button id="toggleListControlsBtn" class="floating-toggle listControl">
+        🧺 Show List Controls
+        </button>
+    </div>
     <!-- Checklist Section Container -->
-    <div id="sectionsContainer"></div>
+    <div id="sectionsContainer" class="hidden"></div>
 
     <!-- Modals -->
     <div id="bodyModal" class="modal hidden"></div>
