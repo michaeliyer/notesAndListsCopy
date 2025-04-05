@@ -48,6 +48,11 @@ export const fonts = [
   "Rubik Mono One",
   "Salsa",
   "Sixtyfour",
+  "Slackey",
+  "Caesar Dressing",
+  "Jaro", 
+  "Kavoon",
+  "Artubus",
 ];
 
 // Dynamically load Google Fonts

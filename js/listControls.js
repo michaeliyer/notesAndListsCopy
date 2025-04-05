@@ -50,6 +50,12 @@ const initializeControls = () => {
   if (toggleListBtn) {
     console.log("Setting up list toggle button");
     toggleListBtn.addEventListener("click", handleListToggle);
+
+    // Set initial button text based on list visibility
+    if (sectionsContainer) {
+      const isHidden = sectionsContainer.classList.contains("hidden");
+      toggleListBtn.textContent = isHidden ? "🗂 Show List" : "🗂 Hide List";
+    }
   }
 
   if (toggleListControlsBtn) {
@@ -57,11 +63,8 @@ const initializeControls = () => {
     toggleListControlsBtn.addEventListener("click", handleListControlsToggle);
   }
 
-  // Show sections container but keep listControls hidden
-  if (sectionsContainer) {
-    console.log("Showing sections container");
-    sectionsContainer.classList.remove("hidden");
-  }
+  // Keep sections container hidden by default (respecting the HTML)
+  // Do not remove the hidden class
 
   // Ensure list controls are hidden by default
   if (listControls) {

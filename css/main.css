@@ -6,7 +6,7 @@
 } */
 
 body {
-  background-image: url("../assets/Stock2.jpeg"); /* adjust path as needed */
+  background-image: url("../assets/OceanWater.jpeg"); /* adjust path as needed */
   background-size: cover; /* or 'contain' */
   background-repeat: no-repeat;
   background-position: center center;
@@ -39,7 +39,7 @@ body {
   width: 300px;
   max-height: calc(100vh - 120px); /* Account for buttons and padding */
   overflow-y: auto;
-  background-color: white;
+  background-color: rgb(182, 30, 164);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -65,7 +65,7 @@ body {
 
 /* Controls styling */
 .controls {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

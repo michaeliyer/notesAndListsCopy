@@ -89,6 +89,9 @@ function renderSections() {
     return;
   }
 
+  // Preserve the hidden state of the container
+  const wasHidden = container.classList.contains("hidden");
+
   container.innerHTML = "";
 
   Object.keys(sections).forEach((sectionName) => {
@@ -194,7 +197,7 @@ function renderSections() {
     const content = document.createElement("div");
     content.className = "section-content";
 
-    const list = document.createElement("ul");
+    const list = document.createElement("ol");
     list.id = `${sectionName.replace(/\s+/g, "")}List`;
 
     content.appendChild(list);
